@@ -77,33 +77,27 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.24</version>
-			<scope>provided</scope>
+			<version>1.18.24</version> <!-- A versão mais recente até a data de hoje -->
+			<scope>provided</scope> <!-- 'provided' indica que o Lombok será usado apenas no desenvolvimento -->
 		</dependency>
 	</dependencies>
 
 	<build>
 		<plugins>
-			<!-- Plugin para compilar o código Java com o Lombok -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
-					<source>17</source> <!-- Versão do Java -->
-					<target>17</target> <!-- Versão do Java -->
+					<source>17</source> <!-- Versão do Java que você está utilizando -->
+					<target>17</target> <!-- Versão do Java que você está utilizando -->
 					<annotationProcessorPaths>
 						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
+							<version>1.18.24</version> <!-- Garantir que a versão do Lombok aqui seja compatível -->
 						</path>
 					</annotationProcessorPaths>
 				</configuration>
-			</plugin>
-
-			<!-- Plugin do Spring Boot para criar o JAR executável -->
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

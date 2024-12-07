@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 
-@Data  // @Getter + @Setter + toString, equals, hashCode
+@Data
 @Entity
 @Table(name = "Tarefa")
 public class Tarefa {
@@ -28,5 +28,7 @@ public class Tarefa {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id_Evento", referencedColumnName = "Id_Evento", nullable = false)
-    private Evento evento; // Relacionamento com a entidade Evento
+    private Evento evento;
+
 }
+

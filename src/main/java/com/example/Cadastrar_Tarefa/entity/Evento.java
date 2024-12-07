@@ -6,14 +6,9 @@ import lombok.Setter;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-
-
-
-@Getter
-@Setter
 @Data
-@Table(name = "Evento")
 @Entity
+@Table(name = "Evento")
 public class Evento {
 
     @Id
@@ -39,9 +34,9 @@ public class Evento {
     @Column(name = "Tipo_Evento", length = 50)
     private String tipoEvento;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "Id_Organizador", referencedColumnName = "Id_Organizador")
-    private Organizador organizador; // A referência ao Organizador é mapeada aqui
+    private Organizador organizador; // A referência ao Organizador
 
     @Lob
     @Column(name = "Foto_Evento")
@@ -56,3 +51,4 @@ public class Evento {
     @Column(name = "Fornecedores", nullable = false)
     private boolean fornecedores = false;
 }
+
