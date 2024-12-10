@@ -88,6 +88,16 @@ public class TarefaController {
         }
     }
 
+    // No backend (Spring Boot)
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> excluirTarefa(@PathVariable Long id) {
+        try {
+            tarefaRepository.deleteById(id);
+            return ResponseEntity.ok("Tarefa excluída com sucesso.");
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Erro ao excluir a tarefa.");
+        }
+    }
 
 
 
